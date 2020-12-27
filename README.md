@@ -54,13 +54,34 @@ export function Heading<
 
 ```tsx
 import * as React from "react";
-import type { PolymorphicForwardRefExoticComponent } from "react-polymorphic-types";
-import { Heading, HeadingDefaultElement, HeadingOwnProps } from "./Heading";
+import type {
+  PolymorphicForwardRefExoticComponent,
+  PolymorphicPropsWithoutRef,
+  PolymorphicPropsWithRef
+} from "react-polymorphic-types";
+import { HeadingDefaultElement, HeadingOwnProps } from "./Heading";
 
-export const RefForwardingHeading: PolymorphicForwardRefExoticComponent<
+export type HeadingProps<
+  T extends React.ElementType = typeof HeadingDefaultElement
+> = PolymorphicPropsWithRef<HeadingOwnProps, T>;
+
+export const Heading: PolymorphicForwardRefExoticComponent<
   HeadingOwnProps,
   typeof HeadingDefaultElement
-> = React.forwardRef(Heading);
+> = React.forwardRef(function Heading<
+  T extends React.ElementType = typeof HeadingDefaultElement
+>(
+  {
+    as,
+    color,
+    style,
+    ...restProps
+  }: PolymorphicPropsWithoutRef<HeadingOwnProps, T>,
+  ref: React.ForwardedRef<React.ElementRef<T>>
+) {
+  const Element: React.ElementType = as || HeadingDefaultElement;
+  return <Element ref={ref} style={{ color, ...style }} {...restProps} />;
+});
 ```
 
 ### With [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo)
