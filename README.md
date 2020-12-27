@@ -50,6 +50,10 @@ export function Heading<
 }
 ```
 
+---
+
+⚠️ All the additional typings below will be deprecated as soon as [microsoft/TypeScript#30134](https://github.com/microsoft/TypeScript/issues/30134) is resolved.
+
 ### With [`React.forwardRef`](https://reactjs.org/docs/react-api.html#reactforwardref)
 
 ```tsx
