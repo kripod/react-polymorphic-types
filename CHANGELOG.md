@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-12-27
+
+### Removed
+
+- **readme:** misleading bundle size badge
+
 ## [1.0.0] - 2020-12-27
 
 ### Added
@@ -14,5 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `PolymorphicPropsWithoutRef` and `PolymorphicPropsWithRef` types for appending `as` to component props
 - `PolymorphicForwardRefExoticComponent`, `PolymorphicMemoExoticComponent` and `PolymorphicLazyExoticComponent` types to support exotic components
 
-[unreleased]: https://github.com/kripod/react-polymorphic-types/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/kripod/react-polymorphic-types/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/kripod/react-polymorphic-types/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/kripod/react-polymorphic-types/releases/tag/v1.0.0
