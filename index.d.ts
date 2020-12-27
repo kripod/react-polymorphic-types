@@ -1,3 +1,5 @@
+/// <reference types="react" />
+
 // Block external access to auxiliary types
 export {};
 

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - block external access to auxiliary types
+- reference `@types/react` explicitly
 
 ## [1.0.1] - 2020-12-27
 
