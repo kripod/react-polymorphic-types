@@ -1,6 +1,6 @@
 {
 	"name": "react-polymorphic-types",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Zero-runtime polymorphic component definitions for React",
 	"keywords": [
 		"react",
