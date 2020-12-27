@@ -45,7 +45,7 @@ export type HeadingProps<
 export function Heading<
   T extends React.ElementType = typeof HeadingDefaultElement
 >({ as, color, style, ...restProps }: HeadingProps<T>) {
-  const Element: React.ElementType = as || ButtonDefaultElement;
+  const Element: React.ElementType = as || HeadingDefaultElement;
   return <Element style={{ color, ...style }} {...restProps} />;
 }
 ```
@@ -59,7 +59,7 @@ import { Heading, HeadingDefaultElement, HeadingOwnProps } from "./Heading";
 
 export const RefForwardingHeading: PolymorphicForwardRefExoticComponent<
   HeadingOwnProps,
-  HeadingDefaultElement
+  typeof HeadingDefaultElement
 > = React.forwardRef(Heading);
 ```
 
@@ -72,7 +72,7 @@ import { Heading, HeadingDefaultElement, HeadingOwnProps } from "./Heading";
 
 export const MemoizedHeading: PolymorphicMemoExoticComponent<
   HeadingOwnProps,
-  HeadingDefaultElement
+  typeof HeadingDefaultElement
 > = React.memo(Heading);
 ```
 
@@ -85,7 +85,7 @@ import type { HeadingDefaultElement, HeadingOwnProps } from "./Heading";
 
 export const LazyHeading: PolymorphicLazyExoticComponent<
   HeadingOwnProps,
-  HeadingDefaultElement
+  typeof HeadingDefaultElement
 > = React.lazy(async () => {
   const { Heading } = await import("./Heading");
   return { default: Heading };
