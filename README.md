@@ -3,7 +3,6 @@
 Zero-runtime polymorphic component definitions for React
 
 [![npm](https://img.shields.io/npm/v/react-polymorphic-types)](https://www.npmjs.com/package/react-polymorphic-types)
-[![npm bundle size](https://img.shields.io/bundlephobia/min/react-polymorphic-types)](https://bundlephobia.com/result?p=react-polymorphic-types)
 
 ## Motivation
 
