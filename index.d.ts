@@ -1,3 +1,6 @@
+// Block external access to auxiliary types
+export {};
+
 type Merge<T, U> = Omit<T, keyof U> & U;
 
 type PropsWithAs<P, T extends React.ElementType> = P & { as?: T };

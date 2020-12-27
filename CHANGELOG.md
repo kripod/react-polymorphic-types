@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- block external access to auxiliary types
+
 ## [1.0.1] - 2020-12-27
 
 ### Removed
