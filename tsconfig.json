@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"isolatedModules": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"importsNotUsedAsValues": "error"
+	}
+}
