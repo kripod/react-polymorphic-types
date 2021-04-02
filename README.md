@@ -81,7 +81,7 @@ export const Heading: PolymorphicForwardRefExoticComponent<
     style,
     ...restProps
   }: PolymorphicPropsWithoutRef<HeadingOwnProps, T>,
-  ref: React.ForwardedRef<React.ElementRef<T>>
+  ref: React.ForwardedRef<Element>
 ) {
   const Element: React.ElementType = as || HeadingDefaultElement;
   return <Element ref={ref} style={{ color, ...style }} {...restProps} />;
