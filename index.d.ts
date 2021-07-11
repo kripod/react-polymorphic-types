@@ -27,7 +27,7 @@ export type PolymorphicPropsWithRef<P, T extends React.ElementType> = Merge<
 
 type PolymorphicExoticComponent<
 	P = {},
-	T extends React.ElementType = React.ElementType
+	T extends React.ElementType = React.ElementType,
 > = Merge<
 	React.ExoticComponent<P & { [key: string]: unknown }>,
 	{
@@ -42,7 +42,7 @@ type PolymorphicExoticComponent<
 
 export type PolymorphicForwardRefExoticComponent<
 	P,
-	T extends React.ElementType
+	T extends React.ElementType,
 > = Merge<
 	React.ForwardRefExoticComponent<P & { [key: string]: unknown }>,
 	PolymorphicExoticComponent<P, T>
@@ -50,7 +50,7 @@ export type PolymorphicForwardRefExoticComponent<
 
 export type PolymorphicMemoExoticComponent<
 	P,
-	T extends React.ElementType
+	T extends React.ElementType,
 > = Merge<
 	React.MemoExoticComponent<React.ComponentType<any>>,
 	PolymorphicExoticComponent<P, T>
@@ -58,7 +58,7 @@ export type PolymorphicMemoExoticComponent<
 
 export type PolymorphicLazyExoticComponent<
 	P,
-	T extends React.ElementType
+	T extends React.ElementType,
 > = Merge<
 	React.LazyExoticComponent<React.ComponentType<any>>,
 	PolymorphicExoticComponent<P, T>
