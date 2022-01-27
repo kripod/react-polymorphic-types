@@ -5,7 +5,13 @@ export {};
 
 type Merge<T, U> = Omit<T, keyof U> & U;
 
-type PropsWithAs<P, T extends React.ElementType> = P & { as?: T };
+type PropsWithAs<
+  P,
+  T extends React.ElementType,
+  S extends keyof JSX.IntrinsicElements = keyof JSX.IntrinsicElements,
+> = P & {
+  as?: T extends keyof JSX.IntrinsicElements ? (T extends S ? T : never) : T
+};
 
 export type PolymorphicPropsWithoutRef<
 	P, 
@@ -13,11 +19,9 @@ export type PolymorphicPropsWithoutRef<
 	S extends keyof JSX.IntrinsicElements = keyof JSX.IntrinsicElements
 > = Merge<
 	T extends keyof JSX.IntrinsicElements
-		? T extends S
-      ? React.PropsWithoutRef<JSX.IntrinsicElements[T]>
-      : never
+		? React.PropsWithoutRef<JSX.IntrinsicElements[T]>
 		: React.ComponentPropsWithoutRef<T>,
-	PropsWithAs<P, T>
+	PropsWithAs<P, T, S>
 >;
 
 export type PolymorphicPropsWithRef<
@@ -26,11 +30,9 @@ export type PolymorphicPropsWithRef<
 	S extends keyof JSX.IntrinsicElements = keyof JSX.IntrinsicElements
 > = Merge<
 	T extends keyof JSX.IntrinsicElements
-		? T extends S
-      ? React.PropsWithRef<JSX.IntrinsicElements[T]>
-      : never
+		? React.PropsWithRef<JSX.IntrinsicElements[T]>
 		: React.ComponentPropsWithRef<T>,
-	PropsWithAs<P, T>
+	PropsWithAs<P, T, S>
 >;
 
 // TODO:
