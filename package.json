@@ -18,7 +18,8 @@
 	"sideEffects": false,
 	"exports": {
 		"default": "./empty.js",
-		"import": "./empty.js"
+		"import": "./empty.js",
+		"types": "./index.d.ts"
 	},
 	"main": "./empty.js",
 	"types": "./index.d.ts",
